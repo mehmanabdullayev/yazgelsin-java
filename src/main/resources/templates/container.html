@@ -1,0 +1,161 @@
+<!DOCTYPE html> <html xmlns:th="http://www.thymeleaf.org" lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js"> <head> <title>yazgəlsin | Sərfəli Qiymətlərlə Mağazalardan və Restoranlardan Onlayn Sifarişlər. </title>  <meta name="Description" content="Bugündən Pula və Zamana Qənaət Edin. Yazgəlsin-dən Sizə Yaxın Mağazalardan Sifariş Edin!" /> <meta property="og:title" content="yazgəlsin | Sərfəli Qiymətlərlə Mağazalardan və Restoranlardan Onlayn Sifarişlər. " /> <meta property="og:description" content="Bugündən Pula və Zamana Qənaət Edin. Yazgəlsin-dən Sizə Yaxın Mağazalardan Sifariş Edin!" /> <meta property="og:url" content="https://www.order-locally.com/" /> <meta property="og:locale" content="en_US" /> <meta property="og:image" content="https://orderlocally.s3.us-east-2.amazonaws.com/static/f3.png" /> <meta property="og:type" content="website" /> <meta property="og:site_name" content="yazgəlsin | Sərfəli Qiymətlərlə Mağazalardan və Restoranlardan Onlayn Sifarişlər. " /> <meta name="keywords" content="thrift stores near me,stores near me,furniture stores near me,grocery stores near me,liquor stores near me,shoe stores near me,pet stores near me,clothing stores near me,antique stores near me,vape stores near me,music stores near me,mattress stores near me,jewelry stores near me,hardware stores near me,gun stores near me,stores open near me,fabric stores near me,appliance stores near me,auto parts stores near me,craft stores near me,tire stores near me,computer stores near me,electronic stores near me,halloween stores near me,game stores near me,dollar stores near me,lighting stores near me,consignment stores near me,toy stores near me,adult stores near me,sporting goods stores near me,record stores near me,comic book stores near me,verizon stores near me,tile stores near me,department stores near me,ups stores near me,sports stores near me,used book stores near me,hobby stores near me,fish stores near me,convenience stores near me,carpet stores near me,used furniture stores near me,health food stores near me,video game stores near me,flooring stores near me,art stores near me,guitar stores near me,camera stores near me,yazgəlsin,near stores"> <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" /> <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+<link rel="shortcut icon" th:href="@{fv.png}"> <link rel="canonical" href="https://www.yazgəlsin.com/careers/" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Arimo&family=Lato&family=Lexend+Mega&family=Noto+Sans:wght@400;700&family=Open+Sans&family=Open+Sans+Condensed:wght@300&family=PT+Sans&family=Poppins:wght@700&family=Raleway:wght@400;500&family=Roboto&family=Roboto+Condensed&display=swap" rel="stylesheet">
+<style>
+* {box-sizing: border-box;}
+body { 
+  margin: 0;
+  font-family:"Roboto", Arial,sans-serif;
+  font-weight: 400;
+}
+.header {  background-color: white;
+  position:relative;
+  width: 100%;
+  box-shadow: 0px 19px 10px -8px rgba(2,0.8,1,0.03); 
+  list-style-type:none;
+  display: inline-block;
+  left:0;
+  right:0;
+  padding-top:5px
+}
+.header a {  font-size: 25px; 
+  color: #0066ff;
+  text-decoration: none;
+}
+.header a:hover {  background-color: white;
+  color: #0066ff;
+}
+.header a.active {  background-color: #0066ff;
+  color: white;
+}
+.header img {  padding-bottom:5px
+}
+a:link {  text-align:center;
+  text-decoration: none;
+}
+/* visited link */
+a:visited {  text-align:center;
+  text-decoration: none;
+}
+/* mouse over link */
+a:hover {  text-align:center;
+  text-decoration: none;
+}
+/* selected link */
+a:active {  text-align:center;
+  text-decoration: none;
+}
+li {  float:left;
+  color: #0066ff;
+}
+.footer {  
+  margin:auto auto auto 5%;
+  font-size:14px;
+  color: #423f3f;
+}
+.footer div {  margin-right:30px
+}
+.footer a:link {  text-decoration: none;
+  color: #423f3f;
+}
+.footer /* visited link */
+a:visited {  text-decoration: none;
+  color: #423f3f;
+}
+/* mouse over link */
+.footer a:hover {  color: #423f3f;
+  text-decoration: none;
+}
+/* selected link */
+.footer a:active {  color: #423f3f;
+  text-decoration: none;
+}
+hr {    border: none;
+    height: 0.5px;
+    /* Set the hr color */
+    color: #dedcdc; /* old IE */
+    background-color: #dedcdc; /* Modern Browsers */
+}
+.a {  margin:5% auto auto auto;
+  width:80%;
+  text-align:center;
+}
+#id1 {  
+  margin:auto;
+  width:320px;
+}
+#id1 input[type=text],input[type=email],input[type=number]{  width: 100%;
+  padding:8.5px 12.5px;
+  margin: 5px auto;
+  display: inline-block;
+  border: 0.1px solid #9e9999;
+  box-sizing: border-box;
+  border-radius:4px;
+  z-index: 1;
+  font-family: Roboto,sans-serif;
+  font-size:13.5px
+}
+#id1 button {  height: 40px;
+  width:100px;
+  transform: translateY(-50%);
+  background-color:#1a73e8;
+  font-family: "Roboto",Arial,sans-serif;
+  font-size: .875rem;
+  font-weight: 500;
+  letter-spacing: .0107142857em;
+  text-transform: none;
+  cursor:pointer;
+  color:#fff;
+  border:none;
+  border-radius:4px;
+  margin:40px auto auto -1%
+}
+#id1 button:hover {  opacity: 0.8;
+}
+#h2 {text-indent: -1px;
+color: #202124;
+padding-bottom: 0;
+padding-top: 16px;
+font-family: 'PT Sans','Noto Sans Myanmar UI',arial,sans-serif;
+font-size: 24px;
+font-weight: 400;
+line-height: 1.3333;
+margin-bottom: 0;
+margin-top: 0;
+text-align:center}
+@media screen and (max-width: 500px) {.header {  border-color: #e8e6e6;
+}
+.header img {  margin:-2.3% auto auto 2.1%;
+}
+.a {  margin-top:35%
+}
+#id1{margin-top:-15%;margin-left:-5.9%}
+#id1 button{margin-left:auto}
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <li><strong> &nbsp &nbsp <a href="/"><img th:src="@{l12.png}" width="auto" height="65px"></a></strong></li>  
+</div>
+
+<div class="a">
+<form id='id1' th:action="@{/createContainer}" th:object="${createContainer}" method="post">
+
+<h2 id='h2'>Kategoriya yarat</h2><br> 
+    <input th:field="*{name}" type="text" maxlength="50" placeholder="Kategoriya adı" required><br>
+	<button type='submit'>Növbəti</button>    
+</form>
+</div><br>
+<hr>
+<div class="footer">
+<div>
+<p><a href="/yeni_mağaza">Mağaza Yaratmaq</a></p>
+<p><a href="/haqqımızda">Necə İşləyirik?</a></p>
+<p><a href="/müştəri_xidmətləri">Müştəri Xidmətləri</a></p>
+<p><a href="/kuryer">Kuryer kimi yazıl</a></p><br><br>
+</div>
+</div>
+</body>
+</html>

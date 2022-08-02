@@ -1,0 +1,153 @@
+<!DOCTYPE html> <html xmlns:th="http://www.thymeleaf.org" lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js"> <head>   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" /> <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<link rel="shortcut icon" th:href="@{fv.png}"> <link rel="canonical" href="https://www.order-locally.com/cart/" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Arimo&family=Lato&family=Lexend+Mega&family=Noto+Sans:wght@400;700&family=Open+Sans&family=Open+Sans+Condensed:wght@300&family=PT+Sans&family=Poppins:wght@700&family=Raleway:wght@400;500&family=Roboto&family=Roboto+Condensed&display=swap" rel="stylesheet">
+<style>
+* {box-sizing: border-box;}
+body { 
+  margin: 0;
+  font-family:"Roboto", Arial,sans-serif;
+  font-weight: 400;
+}
+.header {  background-color: white;
+  position:relative;
+  width: 100%;
+  box-shadow: 0px 19px 10px -8px rgba(2,0.8,1,0.03); 
+  list-style-type:none;
+  display: inline-block;
+  left:0;
+  right:0;
+  padding-top:5px
+}
+.header a {  font-size: 25px; 
+  color: #0066ff;
+  text-decoration: none;
+}
+.header a:hover {  background-color: white;
+  color: #0066ff;
+}
+.header a.active {  background-color: #0066ff;
+  color: white;
+}
+.header img {  padding-bottom:5px
+}
+a:link {  text-align:center;
+  text-decoration: none;
+}
+/* visited link */
+a:visited {  text-align:center;
+  text-decoration: none;
+}
+/* mouse over link */
+a:hover {  text-align:center;
+  text-decoration: underline;
+}
+/* selected link */
+a:active {  text-align:center;
+  text-decoration: underline;
+}
+.container {  margin:auto;
+  width:100%;
+  color: #423f3f;
+  text-align:center
+}
+li {  float:left;
+  color: #ff8c08;
+}
+.footer {  
+  margin:auto auto auto 5%;
+  font-size:14px;
+  color: #423f3f;
+}
+.footer div {  margin-right:30px
+}
+.footer a:link {  text-decoration: none;
+  color: #423f3f;
+}
+.footer /* visited link */
+a:visited {  text-decoration: none;
+  color: #423f3f;
+}
+/* mouse over link */
+.footer a:hover {  color: #423f3f;
+  text-decoration: underline;
+}
+/* selected link */
+.footer a:active {  color: #423f3f;
+  text-decoration: underline;
+}
+hr {    border: none;
+    height: 0.5px;
+    /* Set the hr color */
+    color: #dedcdc; /* old IE */
+    background-color: #dedcdc; /* Modern Browsers */
+}
+#cart {  font-family:'Lato';
+}
+/* Add padding to containers */
+.container {  margin-top:7%;
+  background-color: white;
+}
+/* Full-width input fields */
+input[type=text], input[type=number] {  width: 327px;
+  padding: 15px;
+  margin: auto;
+  display: inline-block;
+  border-style: solid;
+  border-width: 0.1px;
+  border-radius:6px;
+  background:white;
+  font-weight:500;
+  text-align:center
+}
+/* Overwrite default styles of hr */
+hr {  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+/* Add a blue text color to links */
+a {  color: dodgerblue;
+}
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {  background-color: #f1f1f1;
+  text-align: center;
+}
+@media screen and (max-width: 500px) {hr {  height:0.65px
+}
+.header {  border-color: #e8e6e6;
+}
+.header img {  margin:-2.3% auto auto 2.1%;
+}
+.container {margin-top:-7%;;padding-top:20%;
+  font-size:12px
+}
+.h1 {  height:1px
+}
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <li><strong> &nbsp &nbsp <a href="/"><img th:src="@{l12.png}" width="auto" height="65px"></a></strong></li>  
+</div>
+<form action="{% url 'home:op11' %}" method='POST'>
+
+  <div class="container">
+    <p style="font-size:24px;font-family:'Roboto'">Məlumatlarınız</p>
+    <input type="text" placeholder="Adınız və Soyadınız" name="m" required><br><br>
+    <input type="number" placeholder="Mobil nömrəniz" name="h" required><br><br>
+    <input type="text" placeholder="Adresiniz" name="ar" required><br><br>
+    <input style="width:195px;height:50px;font-family:'Lato';cursor: pointer;-webkit-font-smoothing: antialiased;text-shadow: none;border-radius: 100px;font-size: 1.25rem;font-weight:;height: 2.1rem;padding: 0 1.5rem;text-align: center;white-space: nowrap;background-color: white;color:Dodgerblue;border:none" type="submit" value="Ödəməyə Keçid Al">
+  </div>
+</form><br>
+<hr class="h1">
+<div class="footer">
+<div>
+<p><a href="/yeni_mağaza">Mağaza Yaratmaq</a></p>
+<p><a href="/haqqımızda">Necə İşləyirik?</a></p>
+<p><a href="/müştəri_xidmətləri">Müştəri Xidmətləri</a></p>
+<p><a href="/kuryer">Kuryer kimi yazıl</a></p><br><br>
+</div>
+</div>
+</body>
+</html>

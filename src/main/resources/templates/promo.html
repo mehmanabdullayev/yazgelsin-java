@@ -1,0 +1,321 @@
+<!DOCTYPE html> <html xmlns:th="http://www.thymeleaf.org" lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js"> <head> <title>yazgəlsin | Sərfəli Qiymətlərlə Mağazalardan və Restoranlardan Onlayn Sifarişlər. </title>  <meta name="Description" content="Bugündən Pula və Zamana Qənaət Edin. Yazgəlsin-dən Sizə Yaxın Mağazalardan Sifariş Edin!" /> <meta property="og:title" content="yazgəlsin | Sərfəli Qiymətlərlə Mağazalardan və Restoranlardan Onlayn Sifarişlər. " /> <meta property="og:description" content="Bugündən Pula və Zamana Qənaət Edin. Yazgəlsin-dən Sizə Yaxın Mağazalardan Sifariş Edin!" /> <meta property="og:url" content="https://www.order-locally.com/" /> <meta property="og:locale" content="en_US" /> <meta property="og:image" content="https://orderlocally.s3.us-east-2.amazonaws.com/static/f3.png" /> <meta property="og:type" content="website" /> <meta property="og:site_name" content="yazgəlsin | Sərfəli Qiymətlərlə Mağazalardan və Restoranlardan Onlayn Sifarişlər. " /> <meta name="keywords" content="thrift stores near me,stores near me,furniture stores near me,grocery stores near me,liquor stores near me,shoe stores near me,pet stores near me,clothing stores near me,antique stores near me,vape stores near me,music stores near me,mattress stores near me,jewelry stores near me,hardware stores near me,gun stores near me,stores open near me,fabric stores near me,appliance stores near me,auto parts stores near me,craft stores near me,tire stores near me,computer stores near me,electronic stores near me,halloween stores near me,game stores near me,dollar stores near me,lighting stores near me,consignment stores near me,toy stores near me,adult stores near me,sporting goods stores near me,record stores near me,comic book stores near me,verizon stores near me,tile stores near me,department stores near me,ups stores near me,sports stores near me,used book stores near me,hobby stores near me,fish stores near me,convenience stores near me,carpet stores near me,used furniture stores near me,health food stores near me,video game stores near me,flooring stores near me,art stores near me,guitar stores near me,camera stores near me,yazgəlsin,near stores"> <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" /> <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+<link rel="shortcut icon" th:href="@{fv.png}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Arimo&family=Lato&family=Lexend+Mega&family=Noto+Sans:wght@400;700&family=Open+Sans&family=Open+Sans+Condensed:wght@300&family=PT+Sans&family=Poppins:wght@700&family=Raleway:wght@400;500&family=Roboto&family=Roboto+Condensed&display=swap" rel="stylesheet">
+<style>
+* {box-sizing: border-box;}
+body { 
+  margin: 0;
+  font-family:"Roboto", Arial,sans-serif;
+  font-weight: 400;
+}
+.header {  background-color: white;
+  position:fixed;
+  width: 100%;
+  box-shadow: 0px 19px 10px -8px rgba(2,0.8,1,0.03); 
+  list-style-type:none;
+  display: inline-block;
+  margin:0px 5px 20px 5px;
+  padding-top:5px
+}
+.header a {  font-size: 25px; 
+  color: #0066ff;
+  text-decoration: none;
+}
+.header i {  font-size: 40px; 
+  padding:15px
+}
+.header a:hover {  background-color: white;
+  color: #0066ff;
+}
+.header a.active {  background-color: #0066ff;
+  color: white;
+}
+.header img {  padding-bottom:5px
+}
+.row:after {  content: "";
+  display: table;
+  clear: both;
+}
+.styled-select select {   background: transparent;
+   width: 45px;
+   padding-left:16px;
+   font-size: 17px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 45px;
+   -webkit-appearance: none;
+   }
+.styled-select {   width: 45px;
+   height:45px;
+   overflow: hidden;
+   border: 1px solid #ccc;
+   border-radius:6px;
+   float:left;
+   }
+.column1 {  margin:auto;
+  height:auto;
+  width:35%;
+  overflow:auto;
+  float: left;
+  padding:0 3%;
+  font-family:"Open Sans",Arial,sans-serif;
+}
+.column2 {
+  margin:auto;
+  height:auto;
+  width:65%;
+  float: left;
+  padding:0 3%;
+  font-family:"OpenSans-Regular",Arial,sans-serif;
+}
+a:link {  text-align:center;
+  text-decoration: none;
+}
+/* visited link */
+a:visited {  text-align:center;
+  text-decoration: none;
+}
+/* mouse over link */
+a:hover {  text-align:center;
+  text-decoration: none;
+}
+/* selected link */
+a:active {  text-align:center;
+  text-decoration: none;
+}
+@media screen and (max-width: 500px) {.class1 {  margin-top:27%
+}
+.column1 {  width:100%
+}
+.column2 {  width:95%
+}
+}
+/* The Modal (background) */
+.modal {  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+/* Modal Content/Box */
+.modal-content {  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+/* Add Zoom Animation */
+.animate {  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+@-webkit-keyframes animatezoom {  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+/*the container must be positioned relative:*/
+.custom-select {  float:left;
+  font-family: 'Open Sans', arial;
+  position:absolute
+}
+.custom-select select {  display: none; /*hide original SELECT element:*/
+}
+.select-selected {  background-color: DodgerBlue;
+}
+/*style the arrow inside the select element:*/
+.select-selected:after {  position: absolute;
+  content: "";
+  top:14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {  border-color: transparent transparent #fff transparent;
+  top: 7 px;
+}
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {  color: #ffffff;
+  padding-top: 5px;
+  padding-left: 8px;
+  padding-right:5px;
+  padding-bottom: 5px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+/*style items (options):*/
+.select-items {  position: absolute;
+  background-color: DodgerBlue;
+  top: 265%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+/*hide the items when the select box is closed:*/
+.select-hide {  display: none;
+}
+.select-items div:hover, .same-as-selected {  background-color: rgba(0, 0, 0, 0.1);
+}
+.styled-select {  width: 45px;
+  height:45px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  float:left;
+  border-radius:6px
+   }
+#f1 {  margin-right:85%
+}
+li {  float:left;
+  color: #0066ff;
+} 
+.footer {  
+  margin:auto auto auto 5%;
+  font-size:14px;
+  color: #423f3f;
+}
+.footer div {  margin-right:30px
+}
+.footer a:link {  text-decoration: none;
+  color: #423f3f;
+}
+.footer /* visited link */
+a:visited {  text-decoration: none;
+  color: #423f3f;
+}
+/* mouse over link */
+.footer a:hover {  color: #423f3f;
+  text-decoration: none;
+}
+/* selected link */
+.footer a:active {  color: #423f3f;
+  text-decoration: none;
+}
+hr {    border: none;
+    height: 0.5px;
+    /* Set the hr color */
+    color: #dedcdc; /* old IE */
+    background-color: #dedcdc; /* Modern Browsers */
+}
+@media screen and (max-width: 500px) {table {  font-size:13px
+}
+hr {  height:0.65px
+}
+.header {  border-color: #e8e6e6;
+}
+.header img {  margin:-2.3% auto auto 2.1%;
+}
+#id11 {  padding-bottom:0px;
+}
+#f1 {  margin-right:71%
+}
+#id34 {  font-size:12px
+}
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <li><strong> &nbsp &nbsp <a href="/"><img th:src="@{l12.png}" width="auto" height="65px"></a></strong></li>  
+</div><br><br><br><br><br><br>
+<div class="row" style="width:100%">
+  <div class="column1">
+    <div class="mySlides fade">
+    <img src="{{pr.photo1.url}}" width="100%">
+    </div>
+    <div class="mySlides fade">
+    <img src="{{pr.photo2.url}}" width="100%">
+    </div>
+    <br>
+    <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    </div>
+  </div>
+{% if c %}
+  <div class="column2">
+        <h2 style="font-family: 'Noto Sans',arial;-webkit-font-smoothing: antialiased;color: #555;font-size:18px;font-weight: 400;float:left">Available pairs</h2><br><br><br>
+        {% for n in c %}
+        <li style="float:left;list-style-type:none;margin:10px"><span id="id34">{{n.sze}} &nbsp &nbsp {{n.clr}}</span> <br><br><img src="{{n.fl.url}}" width="150px" height="auto">
+        <form style="float:right;margin-left:10px;" action="{% url 'home:acc' n.id %}" method="POST">
+        
+        <button style="width:45px;height:45px;font-family:'Noto Sans';cursor: pointer;-webkit-font-smoothing: antialiased;text-shadow:none;border-radius:0px;center;padding-bottom:-10px;white-space: nowrap;background-color:#0066ff;color: #fff;border:none;float:right;" type="submit"><i style="font-size:28px" class="material-icons">add_shopping_cart</i></button>
+        </form>
+        </li>
+        {% endfor %}<br>
+      <br><br><br>
+      <p style="width:100%;float:left"><b>Detallar' %}</b></p><br><br>
+      <p style="width:100%;float:left;white-space:pre-line;font-family:'Lato';">{{pr.about}}</p>
+  </div>
+</div>
+{% else %}
+      <div class="column2">
+      <p style="font-size:21px">{{pr.name}}</p><br>
+      <b>{{pr.price}}</b> <span style='font-size:20px;font-weight:200'>₼</span><br><br><br>
+      <form id="f1" action="{% url 'home:act' pr.id %}" method="POST">   
+        
+      <div class="styled-select">
+      <select name="quantity">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>       
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      </select>
+         </div>
+         <button style="width:45px;height:45px;font-family:'Noto Sans';cursor: pointer;-webkit-font-smoothing: antialiased;text-shadow: none;border-radius:6px;center;padding-bottom:-10px;white-space: nowrap;background-color:#5260fe;color:#fff;border:none;float:right;" type="submit"><i style="font-size:28px" class="material-icons">add_shopping_cart</i></button>
+      <br><br><br>
+      </form><br><br>
+      <p style="width:100%;float:left"><b>Detallar' %}</b></p><br><br>
+      <p style="width:100%;float:left;white-space:pre-line;font-family:'Lato';">{{pr.about}}</p>
+  </div>
+</div>
+{% endif %}
+<hr>
+<div class="footer">
+<div>
+<p><a href="/yeni_mağaza">Mağaza Yaratmaq</a></p>
+<p><a href="/haqqımızda">Necə İşləyirik?</a></p>
+<p><a href="/müştəri_xidmətləri">Müştəri Xidmətləri</a></p>
+<p><a href="/kuryer">Kuryer kimi yazıl</a></p><br><br>
+</div>
+</div>
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+function plusSlides(n) {  showSlides(slideIndex += n);
+}
+function currentSlide(n) {  showSlides(slideIndex = n);
+}
+function showSlides(n) {  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+</body>
+</html>

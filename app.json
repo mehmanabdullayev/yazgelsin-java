@@ -1,0 +1,6 @@
+{
+  "name": "Yazgelsin Ordering System",
+  "description": "Main Engine",
+  "image": "heroku/java",
+  "addons": [ "heroku-postgresql" ]
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html> <html xmlns:th="http://www.thymeleaf.org" lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js"> <head> <title>yazgəlsin | Sərfəli Qiymətlərlə Mağazalardan və Restoranlardan Onlayn Sifarişlər. </title>  <meta name="Description" content="Bugündən Pula və Zamana Qənaət Edin. Yazgəlsin-dən Sizə Yaxın Mağazalardan Sifariş Edin!" /> <meta property="og:title" content="yazgəlsin | Sərfəli Qiymətlərlə Mağazalardan və Restoranlardan Onlayn Sifarişlər. " /> <meta property="og:description" content="Bugündən Pula və Zamana Qənaət Edin. Yazgəlsin-dən Sizə Yaxın Mağazalardan Sifariş Edin!" /> <meta property="og:url" content="https://www.order-locally.com/" /> <meta property="og:locale" content="en_US" /> <meta property="og:image" content="https://orderlocally.s3.us-east-2.amazonaws.com/static/f3.png" /> <meta property="og:type" content="website" /> <meta property="og:site_name" content="yazgəlsin | Sərfəli Qiymətlərlə Mağazalardan və Restoranlardan Onlayn Sifarişlər. " /> <meta name="keywords" content="thrift stores near me,stores near me,furniture stores near me,grocery stores near me,liquor stores near me,shoe stores near me,pet stores near me,clothing stores near me,antique stores near me,vape stores near me,music stores near me,mattress stores near me,jewelry stores near me,hardware stores near me,gun stores near me,stores open near me,fabric stores near me,appliance stores near me,auto parts stores near me,craft stores near me,tire stores near me,computer stores near me,electronic stores near me,halloween stores near me,game stores near me,dollar stores near me,lighting stores near me,consignment stores near me,toy stores near me,adult stores near me,sporting goods stores near me,record stores near me,comic book stores near me,verizon stores near me,tile stores near me,department stores near me,ups stores near me,sports stores near me,used book stores near me,hobby stores near me,fish stores near me,convenience stores near me,carpet stores near me,used furniture stores near me,health food stores near me,video game stores near me,flooring stores near me,art stores near me,guitar stores near me,camera stores near me,near-Stores,near stores"> <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" /> <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+<link rel="shortcut icon" th:href="@{fv.png}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Arimo&family=Lato&family=Lexend+Mega&family=Noto+Sans:wght@400;700&family=Open+Sans&family=Open+Sans+Condensed:wght@300&family=PT+Sans&family=Poppins:wght@700&family=Raleway:wght@400;500&family=Roboto&family=Roboto+Condensed&display=swap" rel="stylesheet">
+<style>
+* {box-sizing: border-box;}
+body { 
+  margin: 0;
+  font-family:"Roboto", Arial,sans-serif;
+  font-weight: 400;
+}
+.header {  background-color: white;
+  width: 100%;
+  box-shadow: 0px 19px 10px -8px rgba(2,0.8,1,0.03); 
+  list-style-type:none;
+  display: inline-block;
+  margin:0px 5px 20px -10px;
+  padding-top:5px
+}
+.header a {  font-size: 25px; 
+  color: #0066ff;
+  text-decoration: none;
+}
+.header i {  font-size:35px; 
+  padding:15px
+}
+.header a:hover {  background-color: white;
+  color: #0066ff;
+}
+.header a.active {  background-color: #0066ff;
+  color: white;
+}
+.header img {  padding-bottom:5px
+}
+.row:after {  content: "";
+  display: table;
+  clear: both;
+}
+.styled-select select {   background: transparent;
+   width: 45px;
+   padding-left:16px;
+   font-size: 17px;
+   line-height: 1;
+   border: 0;
+   border-radius:0;
+   height: 45px;
+   -webkit-appearance: none;
+   }
+.styled-select {   width: 45px;
+   height:45px;
+   overflow: hidden;
+   border: 1px solid #ccc;
+   border-radius:6px;
+   float:left;
+   }
+.column {  margin:auto;
+  width:300px;
+  height:420px;
+  overflow:auto;
+  float:left;
+  padding:0 3%;
+  font-family: 'Open Sans',Arial,sans-serif;
+  background:white
+}
+.column img{width:100%;height:auto}
+a:link {  text-align:center;
+  text-decoration: none;
+}
+/* visited link */
+a:visited {  text-align:center;
+  text-decoration: none;
+}
+/* mouse over link */
+a:hover {  text-align:center;
+  text-decoration: none;
+}
+/* selected link */
+a:active {  text-align:center;
+  text-decoration: none;
+}
+.column1 {  margin:auto;
+  height:auto;
+  width:28%;
+  overflow:auto;
+  float: left;
+  padding:0 3%;
+}
+li {  float:left;
+  color: #0066ff;
+}
+.footer {  
+  margin:auto auto auto 5%;
+  font-size:14px;
+  color: #423f3f;
+}
+.footer div {  margin-right:30px
+}
+.footer a:link {  text-decoration: none;
+  color: #423f3f;
+}
+.footer /* visited link */
+a:visited {  text-decoration: none;
+  color: #423f3f;
+}
+/* mouse over link */
+.footer a:hover {  color: #423f3f;
+  text-decoration: none;
+}
+/* selected link */
+.footer a:active {  color: #423f3f;
+  text-decoration: none;
+}
+hr {    border: none;
+    height: 0.5px;
+    /* Set the hr color */
+    color: #dedcdc; /* old IE */
+    background-color: #dedcdc; /* Modern Browsers */
+}
+@media screen and (max-width: 500px) {table {  font-size:13px
+}
+hr {  height:0.65px
+}
+.header {  border-color: #e8e6e6;
+}
+.header img {  margin:-2.3% auto auto 5.2%;
+}
+.column1 {  width:100%;
+}
+.column {height:auto}
+#f1 {  margin-right:65%
+}
+.f10 {  width:100%
+}
+}</style>
+</head>
+<body>
+<div class="header">
+  <li><strong> &nbsp &nbsp <a href="/"><img th:src="@{l12.png}" width="auto" height="65px"></a></strong></li>  
+</div>
+<div>
+<p id="id9" style="color: #423f3f;font-family:'Noto Sans',Arial,sans-serif;font-weight:500;margin-left:3%;line-height:35px;padding:0px">{{s.name}}</p>
+</div>
+<div class="row" style="background:white">
+    {% if c %}
+    <div class="column" style="width:100%;height:auto">
+<p style="color: #423f3f;font-size: 18px;font-family:'Roboto';font-weight: 240;line-height: 24px">axtarış nəticələri: {{c}}</p><br>
+        {% for p in l2 %}
+        <div class="column">
+        <a href="{% url 'home:prm' p.id %}"><img src="{{p.photo1.url}}"></a><br><br><form id="f1" action="{% url 'home:act' p.id %}" method="POST">   
+        
+         <div class="styled-select">
+      <select name="quantity">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>       
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      </select>
+         </div>
+      <button style="width:45px;height:45px;font-family:'Noto Sans';cursor: pointer;-webkit-font-smoothing: antialiased;text-shadow: none;border-radius:6px;center;padding-bottom:-10px;white-space: nowrap;background-color:#5260fe;color:#fff;border:none;float:right;" type="submit"><i style="font-size:28px" class="material-icons">add_shopping_cart</i></button>
+      <br><br><br>
+    </form><br><b>{{p.price}}</b> <span style='font-size:20px;font-weight:200'>₼</span><br>{{p.name}}<br><br>
+        </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+</div>
+<hr>
+<div class="footer">
+<div>
+{% if ca %}
+<p><a href="/səbət">Səbətim</a></p>
+{% endif %}
+<p><a href="/yeni_mağaza">Mağaza Yaratmaq</a></p>
+<p><a href="/haqqımızda">Necə İşləyirik?</a></p>
+<p><a href="/müştəri_xidmətləri">Müştəri Xidmətləri</a></p>
+<p><a href="/kuryer">Kuryer kimi yazıl</a></p><br><br>
+</div>
+</div>
+</body>
+</html>
