@@ -141,16 +141,16 @@ text-align:center}
 <div class="header">
   <li><strong> &nbsp &nbsp <a href="/"><img th:src="@{l12.png}" width="auto" height="65px"></a></strong></li>  
 </div>
-
+<ul th:if="${success} == true" class="messages">
+    <li id="id2" class="error">Müraciətiniz qeydə alınmiştır!</li>
+</ul>
 <div class="a">
-<form id='id1' action="{% url 'home:qx' %}" method="post">
-
+<form id='id1' th:action="@{/newComplaint}"th:object="${newComplaint}" method="POST">
 <h2 id='h2'>Qaynar Xətt</h2><br> 
-    <input name="adi" type="text"  maxlength="50" placeholder="Adınız və Soyadınız" required><br>
-    <input name="mob" type="number" maxlength="200" placeholder="Mobil nömrəniz" required><br>
-    <input name="sik" type="text" maxlength="200" placeholder="Şikayətiniz nədir?" required><br>
-	<input name="ela" type="text" placeholder="Əlavə məlumatlar (varsa yazın)" required><br>
-    <p>Sizinlə ən gec 1 saat içində əlaqə saxlanılacaq.</p>
+    <input th:field="*{fullname}" type="text"  maxlength="50" placeholder="Adınız və Soyadınız" required><br>
+    <input th:field="*{phone}" type="number" maxlength="200" placeholder="Mobil nömrəniz" required><br>
+    <input th:field="*{message}" type="text" maxlength="200" placeholder="Şikayətiniz nədir?" required><br>
+	<p>Sizinlə ən gec 1 saat içində əlaqə saxlanılacaq.</p>
 	<button type='submit'>Göndər</button>    
 </form>
 </div>

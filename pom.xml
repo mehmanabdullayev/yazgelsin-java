@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.yazgelsin</groupId>
 	<artifactId>ordering_system</artifactId>
-	<version>1.0.5</version>
+	<version>1.1.1</version>
 	<name>ordering_system</name>
 	<description>Yazgelsin Ordering System</description>
 	<properties>
@@ -21,11 +21,6 @@
 		<dependency>
   			<groupId>org.springframework.boot</groupId>
   			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		<dependency>
-  			<groupId>org.springframework.security</groupId>
-  			<artifactId>spring-security-test</artifactId>
-  			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -91,6 +86,19 @@
 			<groupId>com.rollbar</groupId>
 			<artifactId>rollbar-spring-boot-webmvc</artifactId>
 			<version>1.7.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.giffing.bucket4j.spring.boot.starter</groupId>
+			<artifactId>bucket4j-spring-boot-starter</artifactId>
+			<version>0.7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
 		</dependency>
 	</dependencies>
 

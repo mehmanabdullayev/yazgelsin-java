@@ -13,10 +13,12 @@ public class Complaint {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
+	@Column(nullable = false, length = 60)
+	private String fullname, phone; 
+	
 	@Column(nullable = false, length = 1000)
 	private String message; 
 
-	@Column(nullable =false)
 	private boolean resolved;
 	
 	public long getId() {
@@ -45,5 +47,21 @@ public class Complaint {
 	
 	public String toString() {
 		return message;
+	}
+
+	public String getFullname() {
+		return fullname;
+	}
+
+	public void setFullname(String fullname) {
+		this.fullname = fullname;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 }

@@ -49,9 +49,6 @@ public class Product {
 	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
 	private Set<CartDetail> cartDetails = new TreeSet<>();
 	
-	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
-	private Set<Order> orders = new TreeSet<>();
-	
 	public long getId() {
 		return id;
 	}

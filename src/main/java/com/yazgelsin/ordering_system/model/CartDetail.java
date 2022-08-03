@@ -1,5 +1,6 @@
 package com.yazgelsin.ordering_system.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -8,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -23,6 +25,9 @@ public class CartDetail {
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;
+	
+	@OneToOne(fetch = FetchType.LAZY, cascade =  CascadeType.ALL, mappedBy = "cartDetail")
+    private Order order;
 	
 	@Column(nullable = false)
 	private int quantity;
@@ -61,6 +66,14 @@ public class CartDetail {
 	
 	public String toString() {
 		return String.valueOf(id);
+	}
+	
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
 	}
 }
 

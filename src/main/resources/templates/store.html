@@ -168,35 +168,35 @@ hr {  height:0.65px
     <div th:each="category : ${session.categories}" class="column" style="width:100%;height:auto">
       <p style="color: #423f3f;font-size: 18px;font-family:'Roboto';font-weight: 240;line-height: 24px">Kateqoriya <span th:text="${category.getName()}"></span><br><a style="font-size: 16px;font-family:'Roboto';" th:href="@{/add_product?containerId={id}(id=${category.getId()})}">Burdan yeni məhsul əlavə edin</a><br><a style="font-size: 16px;font-family:'Roboto';" th:href="@{/delete_category?id={id}(id=${category.getId()})}">Bu kategoriyanı sil</a></p>
       <div th:if="${category.getProducts().size()} != 0">  
-		<div th:each="product : ${category.getProducts()}" class="column"><a href="{% url 'home:prm' p.id %}">
+		<div th:each="product : ${category.getProducts()}" class="column"><a th:href="@{/promo?id={id}(id=${product.getId()})}">
 		<img th:src="@{/photos/{productId}/1(productId=${product.getId()})}" width='200px'></a><br><b><span th:text="${product.getPrice()}"></span></b> <span style='font-size:21px;font-weight:200'>₼</span><br><span th:text="${product.getName()}"></span><hr><a th:href="@{/delete_product?containerId={id1}&productId={id2}(id1=${category.getId()}, id2=${product.getId()})}">Məhsulu qaldır</a><br><br>
         </div>
 	  </div>
     </div>  
 </div>
-<!--{% if o %}
+
 <hr>
-<div style="color: #423f3f;font-family: 'Roboto',Arial,sans-serif;font-size: 18px;font-weight: 240;line-height: 24px;text-align:center">
-<p>Sifarişlər' %}</p>
-</div>
-{% for n in o %}
+<div th:if="${session.list.size()} != 0" style="color: #423f3f;font-family: 'Roboto',Arial,sans-serif;font-size: 18px;font-weight: 240;line-height: 24px;text-align:center">
+<p>Sifarişlər</p>
 <table>
-  <thead>    <tr><th>Alıcı' %}</th><th>Mobil' %}</th><th>Adr.</th><th>Məhs.' %}</th><th>Ədəd' %}</th><th>Qt.' %}</th><th></th></tr>
+  <thead>    <tr><th>Alıcı</th><th>Mobil</th><th>Adr.</th><th>Məhs.</th><th>Ədəd</th><th>Qt.</th><th></th></tr>
   </thead>
   <tbody>
-    <tr><td>{{n.byn}}</td><td>{{n.phone}}</td><td>{{n.latitude}},{{n.longitude}}</td><td>{{n.product}}</td><td>{{n.quantity}}</td><td>{{n.product_pair}}</td><td><b>{{n.product.price}}</b> <span style='font-size:20px;font-weight:200'>₼</span></td><td><a href="{% url 'home:of' n.id %}">ok</a></td></tr>
+  <div th:each="order : ${session.list}">
+    <tr><td th:text="${order.getBuyerFullname()}"></td><td th:text="${order.getBuyerPhone()}"></td><td th:text="${order.getBuyerAddress()}"></td><td th:text="${order.getCartDetail().getProduct().getName()}"></td><td th:text="${order.getQuantity()}"></td><td><b><span th:text="${order.getCartDetail().getProduct().getPrice()}"></span></b> <span style='font-size:20px;font-weight:200'>₼</span></td><td><a th:href="@{/order_completed?id={id}(id=${order.getId()})}">ok</a></td></tr>
+  </div>
   </tbody>
 </table>
-{% endfor %}
 <br><br>
-{% endif %}
+</div>
+<!--
 {% if fop %}
 <div style="color: #423f3f;font-family: 'Roboto',Arial,sans-serif;font-size: 18px;font-weight: 240;line-height: 24px;text-align:center">
 <p>Future orders</p>
 </div>
 {% for n in fop %}
 <table>
-  <thead>    <tr><th>Timing' %}</th>Buyer' %}</th><th>Phone' %}</th><th>Address</th><th>Prod.' %}</th><th>Qty.' %}</th><th></th><th>Pr.' %}</th><th>Pr.' %}</th></tr>
+  <thead>    <tr><th>Timing</th>Buyer</th><th>Phone</th><th>Address</th><th>Prod.</th><th>Qty.</th><th></th><th>Pr.</th><th>Pr.</th></tr>
   </thead>
   <tbody>
     <tr><td>{{n.tm}}<td>{{n.buyer}}</td><td>{{n.phone}}</td><td>{{n.latitude}},{{n.longitude}}</td><td>{{n.product}}</td><td>{{n.quantity}}</td><td>{{n.product_pair}}</td><td>${{n.product.price}}</td><td><a href="{% url 'home:of' n.id %}">ok</a></td></tr>

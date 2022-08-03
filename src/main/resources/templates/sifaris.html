@@ -130,14 +130,14 @@ a {  color: dodgerblue;
 <div class="header">
   <li><strong> &nbsp &nbsp <a href="/"><img th:src="@{l12.png}" width="auto" height="65px"></a></strong></li>  
 </div>
-<form action="{% url 'home:op11' %}" method='POST'>
+<form th:action="@{/complete_order}" method='POST'>
 
   <div class="container">
     <p style="font-size:24px;font-family:'Roboto'">Məlumatlarınız</p>
-    <input type="text" placeholder="Adınız və Soyadınız" name="m" required><br><br>
-    <input type="number" placeholder="Mobil nömrəniz" name="h" required><br><br>
-    <input type="text" placeholder="Adresiniz" name="ar" required><br><br>
-    <input style="width:195px;height:50px;font-family:'Lato';cursor: pointer;-webkit-font-smoothing: antialiased;text-shadow: none;border-radius: 100px;font-size: 1.25rem;font-weight:;height: 2.1rem;padding: 0 1.5rem;text-align: center;white-space: nowrap;background-color: white;color:Dodgerblue;border:none" type="submit" value="Ödəməyə Keçid Al">
+    <input type="text" placeholder="Adınız və Soyadınız" name="fullname" required><br><br>
+    <input type="number" placeholder="Mobil nömrəniz" name="phone" required><br><br>
+    <input type="text" placeholder="Adresiniz" name="address" required><br><br>
+    <input style="width:195px;height:50px;font-family:'Lato';cursor: pointer;-webkit-font-smoothing: antialiased;text-shadow: none;border-radius: 100px;font-size: 1.25rem;font-weight:;height: 2.1rem;padding: 0 1.5rem;text-align: center;white-space: nowrap;background-color: white;color:Dodgerblue;border:none" type="submit" value="Sifarişi tamamla">
   </div>
 </form><br>
 <hr class="h1">

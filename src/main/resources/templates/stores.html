@@ -116,17 +116,13 @@ hr {  height:0.65px
 <div class="header">
   <li><strong> &nbsp &nbsp <a href="/"><img th:src="@{l12.png}" width="auto" height="65px"></a></strong></li>  
 </div><br><br>
-<p style="color: #423f3f;font-size: 18px;font-family:'Roboto';font-weight: 240;line-height: 24px">Sizə servis edən restoranlar</p>
-<div class="row" style="margin-top:1%">
-    {% if l %}
-    {% for b in l %}
-        <div class="column" style="text-align:left">
-        <div style="top:0;left:0;right:0"><a href="{% url 'home:spr' b.id %}"><img src="{{b.photo.url}}" style='margin-bottom:10px'></a></div><a style="padding:5px 5px 5px 0px;line-height:20px" href="{% url 'home:spr' b.id %}"><b>{{b.name}}</b></a>
-		<p><a href="https://api.whatsapp.com/send?phone=+994{{b.u.email}}">WhatsApp-da yazın <a style='margin-left:3%'  class="float" href="https://api.whatsapp.com/send?phone=+994{{b.u.email}}" target="_blank"><i class="fa fa-whatsapp my-float"></i>
+<p style="color: #423f3f;font-size: 18px;font-family:'Roboto';font-weight: 240;line-height: 24px">&nbsp &nbsp Restoranlar</p>
+<div th:if="${stores} != null"class="row" style="margin-top:1%">
+        <div th:each="store: ${stores}"class="column" style="text-align:left">
+        <div style="top:0;left:0;right:0"><a th:href="@{/store?id={id}(id=${store.getId()})}"><img th:src="@{/photos/{id}(id=${store.getId()})}" style='margin-bottom:10px'></a></div><a style="padding:5px 5px 5px 0px;line-height:20px" th:href="@{/store?id={id}(id=${store.getId()})}"><b><span th:text="${store.getName()}"></span></b></a>
+		<p><a th:href="@{https://api.whatsapp.com/send?phone=994{phone}(phone=${store.getPhone().substring(1)})}">WhatsApp-da yazın <a style='margin-left:3%'  class="float" th:href="@{https://api.whatsapp.com/send?phone=994{phone}(phone=${store.getPhone().substring(1)})}" target="_blank"><i class="fa fa-whatsapp my-float"></i>
 </a></p><br>
         </div>
-    {% endfor %}
-    {% endif %}
 </div>
 <br><br>
 <hr>

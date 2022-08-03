@@ -23,16 +23,19 @@ import com.yazgelsin.ordering_system.model.Product;
 import com.yazgelsin.ordering_system.model.Store;
 import com.yazgelsin.ordering_system.repository.ContainerRepository;
 import com.yazgelsin.ordering_system.repository.ProductRepository;
+import com.yazgelsin.ordering_system.repository.StoreRepository;
 
 @Controller
 public class ContainerController {
 	private ContainerRepository containerRepository;
 	private ProductRepository productRepository;
+	private StoreRepository storeRepository;
 	
 	@Autowired
-	public ContainerController(ContainerRepository repository1, ProductRepository repository2) {
+	public ContainerController(ContainerRepository repository1, ProductRepository repository2, StoreRepository repository3) {
 		this.containerRepository = repository1;
 		this.productRepository = repository2;
+		this.storeRepository = repository3;
 	}
 	
 	@GetMapping("/yeni_kateqoriya")
@@ -97,6 +100,29 @@ public class ContainerController {
 		try { containerRepository.deleteById(container.getId()); }
 		catch (Exception e) {}
 		return "redirect:/magazam";
+	}
+	
+	@GetMapping("/kategoyira_secimi")
+	public String category() {
+		return "category";
+	}
+	
+	@GetMapping("/no_store")
+	public String noStore() {
+		return "no_store";
+	}
+	
+	@GetMapping("/restaurants")
+	public String noStore(ModelMap model) {
+		model.addAttribute("stores", storeRepository.findAll());
+		return "stores";
+	}
+	
+	@GetMapping("/promo")
+	public String promo(ModelMap model, @RequestParam(value = "id") long id) {
+		Product product = productRepository.getReferenceById(id);
+		model.addAttribute("product", product);
+		return "promo";
 	}
 }
 

@@ -113,6 +113,11 @@ hr {    border: none;
 }
 #id1 button:hover {  opacity: 0.8;
 }
+.messages {  list-style-type:none;
+  margin:auto;
+  width:360px;
+  margin-bottom:1%
+}
 #h2 {text-indent: -1px;
 color: #202124;
 padding-bottom: 0;
@@ -141,17 +146,19 @@ text-align:center}
 <div class="header">
   <li><strong> &nbsp &nbsp <a href="/"><img th:src="@{l12.png}" width="auto" height="65px"></a></strong></li>  
 </div>
-
+<ul th:if="${success} == true" class="messages">
+    <li id="id2" class="error">Müraciətiniz qeydə alınmıştır!</li>
+</ul>
 <div class="a">
 <p style="font-family:'Raleway';font-size:24px">İş İmkanı!</p>
 <p style="font-family: 'Lato';">Kuryer kimi işə başlayın və öz zəhmətinizlə gəlir əldə edin. Zəhmət olmasa kuryer kimi işləmək üçün aşağıdakı blankı doldurun.</p>
-<form id='id1' action="{% url 'home:car' %}" method="post">
+<form id='id1' th:action="@{/newCourier}"th:object="${newCourier}" method="POST">
 
 <h2 id='h2'>İşə Qəbul Formu</h2><br> 
-    <input name="fulln" type="text"  maxlength="50" placeholder="Adınız və soyadınız" required><br>
-    <input name="unvan" type="text" maxlength="200" placeholder="Yaşayış ünvanınız" required><br>
-    <input name="tecr" type="text" maxlength="200" placeholder="İş təcrübəniz (vardısa yoxsa boş buraxın)" required><br>
-	<input name="phone" type="number" placeholder="Mobil nömrə" required><br><br>
+    <input th:field="*{fullname}" type="text"  maxlength="50" placeholder="Adınız və soyadınız" required><br>
+    <input th:field="*{address}" type="text" maxlength="200" placeholder="Yaşayış ünvanınız" required><br>
+    <input th:field="*{workExperience}" type="text" maxlength="200" placeholder="İş təcrübəniz (vardısa yoxsa boş buraxın)" required><br>
+	<input th:field="*{phone}" type="number" placeholder="Mobil nömrə" required><br><br>
     <button type='submit'>Göndər</button>    
 </form>
 </div>

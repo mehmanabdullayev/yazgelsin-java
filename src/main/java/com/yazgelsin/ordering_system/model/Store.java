@@ -28,9 +28,6 @@ public class Store {
 	@Column(nullable = false, length = 100)
 	private String name, category, password, ownerFullname, phone; 
 
-	/*@Column(nullable = false, length = 200)
-	private String photo;*/
-	
 	@Lob 
 	@Type(type = "org.hibernate.type.ImageType")
 	private byte[] photo; 

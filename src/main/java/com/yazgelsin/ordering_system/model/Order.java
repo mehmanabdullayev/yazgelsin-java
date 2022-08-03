@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Digits;
@@ -27,9 +28,9 @@ public class Order {
     @JoinColumn(name = "store_id", nullable = false)
     private Store store;
 	
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "product_id", nullable = false)
-    private Product product;
+	@OneToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "cartdetail_id", nullable = false)
+    private CartDetail cartDetail;
 
 	@Column(nullable = false)
 	@DecimalMin(value = "0.0", inclusive = false)
@@ -46,7 +47,7 @@ public class Order {
 	private long buyerPhone;
 	
 	@Column(nullable =false)
-	private boolean order_filled;
+	private boolean filled;
 	
 	@Column(updatable = false)
     @CreationTimestamp
@@ -68,12 +69,12 @@ public class Order {
 		this.store = store;
 	}
 
-	public Product getProduct() {
-		return product;
+	public CartDetail getCartDetail() {
+		return cartDetail;
 	}
 
-	public void setProduct(Product product) {
-		this.product = product;
+	public void setCartDetail(CartDetail cartDetail) {
+		this.cartDetail = cartDetail;
 	}
 
 	public BigDecimal getPrice() {
@@ -124,12 +125,12 @@ public class Order {
 		this.buyerPhone = buyerPhone;
 	}
 
-	public boolean isOrder_filled() {
-		return order_filled;
+	public boolean isFilled() {
+		return filled;
 	}
 
-	public void setOrder_filled(boolean order_filled) {
-		this.order_filled = order_filled;
+	public void setFilled(boolean filled) {
+		this.filled = filled;
 	}
 
 	public LocalDateTime getOrderDateTime() {
