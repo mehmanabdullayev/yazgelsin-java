@@ -1,1 +1,1 @@
-Mağazalar və restoranlar üçün elektron ticarət portalı.
+Mağazalar üçün elektron ticarət portalı.
